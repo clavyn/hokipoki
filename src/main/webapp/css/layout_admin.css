@@ -1,0 +1,108 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+a{color:#fff; text-decoration : none; background-color:transparent;}
+a:hover{text-decoration:none;}
+html,body{height:100%;}
+body{font-family: 'Roboto','Noto Sans KR', sans-serif;}
+
+/*wrap*/
+#wrap{height:100%}
+
+/*header*/
+#header {display:flex; justify-content:space-between; align-items:center; width:100%; height:85px; padding-left:40px; padding-right:40px; background-color:#16151A;}
+#header .logo {font-size:0;}
+#header nav {display:flex; height:100%;}
+#header .header_item {height:100%; padding-left:50px; padding-right:50px;}
+#header .header_item a {position:relative; display:flex; align-items:center; height:100%; opacity:0.6; font-weight:500; text-align:center;}
+#header .header_item a .line{position:absolute; bottom:0; width:100%; height:4px;}
+#header .header_item a:hover {opacity:1; color:#fff;}
+#header .header_item.active a{opacity:1; font-weight:700;}
+#header .header_item.active a .line{background-color:#457BE4;}
+#header .login_nav .btn{display:inline-flex; align-items:center; border:1px solid #5E5E68; color:rgba(255,255,255,0.8); transition:0.1s;}
+#header .login_nav .btn:hover{background-color:rgba(91,94,103,0.4)}
+#header .login_nav .icon{margin-right:8px; margin-top:2px; font-size:13px; opacity:0.7;}
+
+
+/*mobileNav*/
+.m_menu {display:none; position:fixed; z-index:99; bottom:0; left:0; width:100%; height:100px; border-top:1px solid #D9D9D9; background:#fff;}
+.m_menu>nav{display:flex; height:100%;}
+.m_menu .header_item{flex:0 0 20%; background:#fff; text-align:center;}
+.m_menu .header_item a{display:flex; flex-direction:column; align-items:center; height:100%; color:#949494;}
+.m_menu .header_item a>.icon{width:40px; height:40px; background-color:orange;}
+.m_menu .header_item.active a{color:#000;}
+
+/*content*/
+#content{height:calc(100% - 85px); padding-top:50px; padding-bottom:50px;}
+#content>.row{height:100%;}
+#content>.row>div[class^="col-"]{height:100%;}
+#content.bg{height:auto; min-height:calc(100% - 85px); background-color:#F5F5F5;}
+
+/*side*/
+.side{display:flex; flex-direction:column;}
+
+/**/
+.section {display:flex; flex-direction:column; height:100%;}
+.section h5 {display:flex; align-items:baseline; flex-wrap:wrap; margin-bottom:20px; font-family: 'yg-jalnan'; font-size:20px; color:#221A3F;}
+.section h5>small{flex:0 0 auto; margin-left:8px; font-family:'Roboto','Noto Sans KR', sans-serif; font-size:14px; font-weight:400;}
+
+/*content>side*/
+#content>.container>.row>.side{display:flex; flex-direction:column; height:100%;}
+#content>.row>.side .section{height:auto;}
+
+/*content>main*/
+#content>.container>.row>.main{height:100%;}
+
+
+
+/*content>.cont_header : 상세페이지 패턴에만 있음*/
+.cont_header{display:flex; align-items:center; margin-bottom:20px;}
+.cont_header>h2{font-size:30px; font-family: 'yg-jalnan';}
+.cont_header .right{margin-left:auto;}
+#btn_list{display:inline-flex; font-size:0; width:40px; height:40px; margin-right:5px; border-radius:5px; background-image:url(../img/admin/utils/utils_back_arrow.svg); background-size:auto; background-position:center; background-repeat:no-repeat;}
+#btn_list:hover{background-color:rgba(0,0,0,0.05);}
+
+@media all and (max-width:1400px){
+	#header .header_item {padding-left:30px; padding-right:30px;}
+}
+
+@media all and (max-width:992px){ /* lg */
+	#header nav{display:none}
+}
+
+@media all and (max-width:768px){ /* md */
+	body{background:#F5F5F5; overflow:hidden}
+	
+	/* header */
+	#header {height:65px; background-color:transparent;}
+	#header .logo{width:160px;}
+	#header .logo>img{width:100%;}
+	#header{padding-left:20px; padding-right:20px;}
+	
+	/*mobileNav*/
+	.m_menu {display:block;}
+	
+	
+	/* content */
+	#content{height:calc(100% - 165px); padding-top:20px; padding-bottom:20px; background-color:#fff; overflow-y:auto;}
+	#content.bg{height:calc(100% - 165px); min-height:auto;}
+	
+	#content>.container{max-width:100%;}
+	
+	/*section*/
+	.section {height:auto;}
+	.section h5 {font-size:18px;}
+	.container.divide>.row>div:not(:last-child)>.section:after{content:''; display:block; width:100%; height:10px; margin-top:20px; border:1px solid #D9D9D9; border-width:1px 0; background-color:#F5F5F5; }
+	
+	/*content>.cont_header : 상세페이지 패턴에만 있음*/
+	.cont_header>h2{font-size:20px;}
+	#btn_list{width:30px; height:30px; background-size:cover;}
+}
+
+@media all and (max-width:576px){ /* sm */
+
+}
